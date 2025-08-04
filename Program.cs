@@ -1,6 +1,6 @@
 ﻿string mensagemDeBoasVindas = "Bem-vindo ao Zynk Music";
 
-void ExibirMensagemDeBoasVindas()
+void ExibirLogo()
 {
     Console.WriteLine(@"    
 █░▄▄░▄█▄─█─▄█▄─▀█▄─▄█▄─█─▄███▄─▀█▀─▄█▄─██─▄█─▄▄▄▄█▄─▄█─▄▄▄─█
@@ -8,11 +8,12 @@ void ExibirMensagemDeBoasVindas()
 ▀▄▄▄▄▄▀▀▄▄▄▀▀▄▄▄▀▀▄▄▀▄▄▀▄▄▀▀▀▄▄▄▀▄▄▄▀▀▄▄▄▄▀▀▄▄▄▄▄▀▄▄▄▀▄▄▄▄▄▀
 ");
     Console.WriteLine(mensagemDeBoasVindas);
- 
+
 }
 
 void ExibirMenu()
 {
+    ExibirLogo();
     Console.WriteLine("\nSelecione uma opção:");
     Console.WriteLine("Digite 1 para resgistrar uma banda ou individual");
     Console.WriteLine("Digite 2 para mostrar todas as bandas");
@@ -50,12 +51,12 @@ void RegistrarBandas()
 {
     Console.Clear();
     Console.WriteLine("Registri de Bandas");
-    Console.WriteLine("Digite o nome da banda ou artista individual desejado para registrar: ");
+    Console.WriteLine("Digite o nome da banda para registrar: ");
     string nomeDaBanda = Console.ReadLine()!;
     Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
     Thread.Sleep(2000);
     Console.Clear();
     ExibirMenu();
 }
-ExibirMensagemDeBoasVindas();
+
 ExibirMenu();
