@@ -1,5 +1,5 @@
 ﻿string mensagemDeBoasVindas = "Bem-vindo ao Zynk Music";
-List<string> listaDasBandas = new List<string>();
+List<string> listaDasBandas = new List<string> {"Linkin Park" , "Iron Maiden" , "Ramnstein"};
 
 void ExibirLogo()
 {
@@ -31,7 +31,7 @@ void ExibirMenu()
     {
         case 1: RegistrarBandas();
             break;
-        case 2: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+        case 2: MostrarBandasRegistradas();
             break;
         case 3:
             Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
@@ -57,6 +57,22 @@ void RegistrarBandas()
     listaDasBandas.Add(nomeDaBanda);
     Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
     Thread.Sleep(2000);
+    Console.Clear();
+    ExibirMenu();
+}
+
+void MostrarBandasRegistradas()
+{
+    Console.Clear();
+    Console.WriteLine("**********************************");
+    Console.WriteLine("Exibindo todas bandas registradas");
+    Console.WriteLine("**********************************\n");
+    for (int i = 0; i < listaDasBandas.Count; i++)
+    {
+       Console.WriteLine($"Banda: {listaDasBandas[i]}");
+    }
+    Console.WriteLine("\nDigite alguma tecla para voltar ao menu principal: ");
+    Console.ReadKey();
     Console.Clear();
     ExibirMenu();
 }
