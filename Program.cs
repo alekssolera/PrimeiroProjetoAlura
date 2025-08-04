@@ -1,4 +1,5 @@
 ﻿string mensagemDeBoasVindas = "Bem-vindo ao Zynk Music";
+List<string> listaDasBandas = new List<string>();
 
 void ExibirLogo()
 {
@@ -50,9 +51,10 @@ void ExibirMenu()
 void RegistrarBandas()
 {
     Console.Clear();
-    Console.WriteLine("Registri de Bandas");
-    Console.WriteLine("Digite o nome da banda para registrar: ");
+    Console.WriteLine("Registro de Bandas");
+    Console.Write("Digite o nome da banda para registrar: ");
     string nomeDaBanda = Console.ReadLine()!;
+    listaDasBandas.Add(nomeDaBanda);
     Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
     Thread.Sleep(2000);
     Console.Clear();
