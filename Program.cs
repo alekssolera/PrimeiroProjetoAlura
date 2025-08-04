@@ -50,6 +50,12 @@ void RegistrarBandas()
 {
     Console.Clear();
     Console.WriteLine("Registri de Bandas");
+    Console.WriteLine("Digite o nome da banda ou artista individual desejado: para regitrar: ");
+    string nomeDaBanda = Console.ReadLine()!;
+    Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
+    Thread.Sleep(2000);
+    Console.Clear();
+    ExibirMenu();
 }
 ExibirMensagemDeBoasVindas();
 ExibirMenu();
