@@ -1,5 +1,6 @@
 ﻿string mensagemDeBoasVindas = "Bem-vindo ao Zynk Music";
-List<string> listaDasBandas = new List<string> {"Linkin Park" , "Iron Maiden" , "Ramnstein"};
+//List<string> listaDasBandas = new List<string> {"Linkin Park" , "Iron Maiden" , "Ramnstein"};
+Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
 
 void ExibirLogo()
 {
@@ -33,8 +34,7 @@ void ExibirMenu()
             break;
         case 2: MostrarBandasRegistradas();
             break;
-        case 3:
-            Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+        case 3: AvaliarUmaBanda();
             break;
         case 4: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
             break;
@@ -54,7 +54,7 @@ void RegistrarBandas()
     ExibirTituloDaOpcao("Registro de Bandas");
     Console.Write("Digite o nome da banda para registrar: ");
     string nomeDaBanda = Console.ReadLine()!;
-    listaDasBandas.Add(nomeDaBanda);
+    bandasRegistradas.Add(nomeDaBanda, new List<int>());
     Console.WriteLine($"\nA banda {nomeDaBanda} foi registrada com sucesso!");
     Thread.Sleep(2000);
     Console.Clear();
@@ -65,7 +65,7 @@ void MostrarBandasRegistradas()
 {
     Console.Clear();
     ExibirTituloDaOpcao("Bandas Registradas");
-    foreach (string banda in listaDasBandas)
+    foreach (string banda in bandasRegistradas.Keys)
     {
        Console.WriteLine($"Banda: {banda}");
     }
@@ -82,6 +82,12 @@ void ExibirTituloDaOpcao(string titulo)
     Console.WriteLine(asteriscos);
     Console.WriteLine(titulo);
     Console.WriteLine(asteriscos + "\n");
+}
+
+void AvaliarUmaBanda()
+{
+    Console.Clear();
+    ExibirTituloDaOpcao("Avaliar Banda");
 }
 
 ExibirMenu();
